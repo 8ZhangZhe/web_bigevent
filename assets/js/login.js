@@ -45,7 +45,7 @@ $(function () {
         password: $("#form_reg [name=password]").val(),
       },
       success: (res) => {
-        console.log(res);
+        // console.log(res);
         if (res.status !== 0) return layer.msg(res.message);
         layer.msg("注册成功！");
         // 模拟点击跳转登录
@@ -64,14 +64,14 @@ $(function () {
         data: $(this).serialize(),
         // username=zhangzhe&password=123456
         success: (res) => {
-            console.log(res);
+            // console.log(res);
             if(res.status !== 0) return layer.msg("登陆失败！")
             layer.msg("登陆成功！")
             // 登陆成功之后把 token 令牌存放在本地
             localStorage.setItem("token",res.token)
             // 跳转到主页
-            // location.href = "/index.html"
-            console.log(location.search);  //?username=zhangzhe&password=123456
+            location.href = "/index.html"
+            // console.log(location.search);  //?username=zhangzhe&password=123456
         }
     })
 
