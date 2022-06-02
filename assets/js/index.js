@@ -17,7 +17,7 @@ function getUserInfo() {
 
 // 渲染用户信息
 const renderAvatar = (user) => {
-  console.log(user);
+  // console.log(user);
   let uname = user.nickname || user.username;
   // 渲染欢迎语
   $("#welcome").html(`欢迎 ${uname}`);
@@ -42,3 +42,8 @@ $("#btnlogout").click(() => {
 });
 
 getUserInfo();
+
+// 文章发布后跳转到文章列表，实现高亮切换函数封装，后面js点击后调用
+function change() {
+  $("#change").attr("class","layui-this").next().attr("class","")
+}
